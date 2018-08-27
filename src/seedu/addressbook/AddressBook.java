@@ -193,12 +193,7 @@ public class AddressBook {
         showWelcomeMessage();
         processProgramArgs(args);
         loadDataFromStorage();
-        while (true) {
-            String userCommand = getUserInput();
-            echoUserCommand(userCommand);
-            String feedback = executeCommand(userCommand);
-            showResultToUser(feedback);
-        }
+        programLoop();
     }
 
     /*
@@ -251,6 +246,15 @@ public class AddressBook {
 
         if(args.length == 0) {
             setupDefaultFileForStorage();
+        }
+    }
+
+    private static void programLoop() {
+        while (true) {
+            String userCommand = getUserInput();
+            echoUserCommand(userCommand);
+            String feedback = executeCommand(userCommand);
+            showResultToUser(feedback);
         }
     }
 
