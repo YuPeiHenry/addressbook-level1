@@ -225,7 +225,9 @@ public class AddressBook {
      * ====================================================================
      */
 
-    /** Echoes the user input back to the user. */
+    /**
+     * Echoes the user input back to the user.
+     */
     private static void echoUserCommand(String userCommand) {
         showToUser("[Command entered:" + userCommand + "]");
     }
@@ -268,7 +270,9 @@ public class AddressBook {
         createFileIfMissing(filePath);
     }
 
-    /** Displays the goodbye message and exits the runtime. */
+    /**
+     * Displays the goodbye message and exits the runtime.
+     */
     private static void exitProgram() {
         showToUser(MESSAGE_GOODBYE, DIVIDER, DIVIDER);
         System.exit(0);
@@ -303,7 +307,9 @@ public class AddressBook {
         return hasValidParentDirectory(filePathToValidate) && hasValidFileName(filePathToValidate);
     }
 
-    /** Returns true if the file path has a parent directory that exists. */
+    /**
+     * Returns true if the file path has a parent directory that exists.
+     */
     private static boolean hasValidParentDirectory(Path filePath) {
         Path parentDirectory = filePath.getParent();
         return parentDirectory == null || Files.isDirectory(parentDirectory);
