@@ -245,6 +245,9 @@ public class AddressBook {
         }
     }
 
+    /**
+     * The main loop logic of the program
+     */
     private static void programLoop() {
         while (true) {
             String userCommand = getUserInput();
