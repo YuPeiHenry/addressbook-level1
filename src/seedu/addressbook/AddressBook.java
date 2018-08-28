@@ -19,6 +19,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.HashMap;
 import java.util.Optional;
 import java.util.Scanner;
 import java.util.Set;
@@ -143,6 +144,10 @@ public class AddressBook {
     private static final int PERSON_DATA_INDEX_NAME = 0;
     private static final int PERSON_DATA_INDEX_PHONE = 1;
     private static final int PERSON_DATA_INDEX_EMAIL = 2;
+
+    private static final String PERSON_PROPERTY_NAME = "name";
+    private static final String PERSON_PROPERTY_PHONE = "phone";
+    private static final String PERSON_PROPERTY_EMAIL = "email";
 
     /** The number of data elements for a single person. */
     private static final int PERSON_DATA_COUNT = 3;
@@ -834,6 +839,15 @@ public class AddressBook {
     }
 
     /**
+     * Returns the given person's name
+     *
+     * @param person whose name you want
+     */
+    private static String getNameFromPerson(HashMap<String, String> person) {
+        return person.get(PERSON_PROPERTY_NAME);
+    }
+
+    /**
      * Returns given person's phone number
      *
      * @param person whose phone number you want
@@ -843,12 +857,30 @@ public class AddressBook {
     }
 
     /**
+     * Returns given person's phone number
+     *
+     * @param person whose phone number you want
+     */
+    private static String getPhoneFromPerson(HashMap<String, String> person) {
+        return person.get(PERSON_PROPERTY_PHONE);
+    }
+
+    /**
      * Returns given person's email
      *
      * @param person whose email you want
      */
     private static String getEmailFromPerson(String[] person) {
         return person[PERSON_DATA_INDEX_EMAIL];
+    }
+
+    /**
+     * Returns given person's email
+     *
+     * @param person whose email you want
+     */
+    private static String getEmailFromPerson(HashMap<String, String> person) {
+        return person.get(PERSON_PROPERTY_EMAIL);
     }
 
     /**
