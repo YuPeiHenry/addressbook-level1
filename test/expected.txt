@@ -279,6 +279,25 @@
 || 
 || 0 persons found!
 || ===================================================
+|| Enter command: || [Command entered:  add John Doe p/98765432 e/johnd@gmail.com]
+|| New person added: John Doe, Phone: 98765432, Email: johnd@gmail.com
+|| ===================================================
+|| Enter command: || [Command entered:  add John D p/98765432 e/johnd@gmail.com]
+|| New person added: John D, Phone: 98765432, Email: johnd@gmail.com
+|| ===================================================
+|| Enter command: || [Command entered:  add John Do p/98765432 e/johnd@gmail.com]
+|| New person added: John Do, Phone: 98765432, Email: johnd@gmail.com
+|| ===================================================
+|| Enter command: || [Command entered:  deleteall John]
+|| 	1. John Doe  Phone Number: 98765432  Email: johnd@gmail.com
+|| 	2. John D  Phone Number: 98765432  Email: johnd@gmail.com
+|| 	3. John Do  Phone Number: 98765432  Email: johnd@gmail.com
+|| 
+|| Deleted Person: John Doe  Phone Number: 98765432  Email: johnd@gmail.com
+|| Deleted Person: John D  Phone Number: 98765432  Email: johnd@gmail.com
+|| Deleted Person: John Do  Phone Number: 98765432  Email: johnd@gmail.com
+|| 
+|| ===================================================
 || Enter command: || [Command entered:  exit]
 || Exiting Address Book... Good bye!
 || ===================================================
