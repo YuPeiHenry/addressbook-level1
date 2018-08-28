@@ -116,6 +116,8 @@ public class AddressBook {
     private static final String COMMAND_DELETEALL_WORD = "deleteall";
     private static final String COMMAND_DELETEALL_DESC = "Deletes all people whose names contain any of the specified "
             + "keywords (case-sensitive) and displays them as a list with index numbers.";
+    private static final String COMMAND_DELETEALL_PARAMETER = "KEYWORD [MORE_KEYWORDS]";
+    private static final String COMMAND_DELETEALL_EXAMPLE = COMMAND_DELETEALL_WORD + " John";
 
     private static final String COMMAND_CLEAR_WORD = "clear";
     private static final String COMMAND_CLEAR_DESC = "Clears address book permanently.";
@@ -1058,6 +1060,7 @@ public class AddressBook {
                 + getUsageInfoForFindCommand() + LS
                 + getUsageInfoForViewCommand() + LS
                 + getUsageInfoForDeleteCommand() + LS
+                + getUsageInfoForDeleteAllCommand() + LS
                 + getUsageInfoForClearCommand() + LS
                 + getUsageInfoForExitCommand() + LS
                 + getUsageInfoForHelpCommand();
@@ -1082,6 +1085,13 @@ public class AddressBook {
         return String.format(MESSAGE_COMMAND_HELP, COMMAND_DELETE_WORD, COMMAND_DELETE_DESC) + LS
                 + String.format(MESSAGE_COMMAND_HELP_PARAMETERS, COMMAND_DELETE_PARAMETER) + LS
                 + String.format(MESSAGE_COMMAND_HELP_EXAMPLE, COMMAND_DELETE_EXAMPLE) + LS;
+    }
+
+    /** Returns the string for showing 'delete' command usage instruction */
+    private static String getUsageInfoForDeleteAllCommand() {
+        return String.format(MESSAGE_COMMAND_HELP, COMMAND_DELETEALL_WORD, COMMAND_DELETEALL_DESC) + LS
+                + String.format(MESSAGE_COMMAND_HELP_PARAMETERS, COMMAND_DELETEALL_PARAMETER) + LS
+                + String.format(MESSAGE_COMMAND_HELP_EXAMPLE, COMMAND_DELETEALL_EXAMPLE) + LS;
     }
 
     /** Returns string for showing 'clear' command usage instruction */
