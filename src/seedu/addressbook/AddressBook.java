@@ -371,7 +371,7 @@ public class AddressBook {
         case COMMAND_DELETE_WORD:
             return executeDeletePerson(commandArgs);
         case COMMAND_DELETEALL_WORD:
-            return executeDeletePerson(commandArgs);
+            return executeDeleteallPerson(commandArgs);
         case COMMAND_CLEAR_WORD:
             return executeClearAddressBook();
         case COMMAND_HELP_WORD:
@@ -505,6 +505,23 @@ public class AddressBook {
         final String[] targetInModel = getPersonByLastVisibleIndex(targetVisibleIndex);
         return deletePersonFromAddressBook(targetInModel) ? getMessageForSuccessfulDelete(targetInModel) // success
                                                           : MESSAGE_PERSON_NOT_IN_ADDRESSBOOK; // not found
+    }
+
+    /**
+     * Deletes all persons in the full model whose names contain some of the specified keywords.
+     *
+     * @param commandArgs full command args string from the user
+     * @return feedback display message for the operation result
+     */
+    private static String executeDeleteallPerson(String commandArgs) {
+        executeFindPersons(commandArgs);
+        String returnMessage = "";
+        for (int i = 1; isDisplayIndexValidForLastPersonListingView(i); i++) {
+            final String[] targetInModel = getPersonByLastVisibleIndex(i);
+            returnMessage += deletePersonFromAddressBook(targetInModel) ? getMessageForSuccessfulDelete(targetInModel)
+                    + LS : "";
+        }
+        return returnMessage;
     }
 
     /**
