@@ -113,6 +113,10 @@ public class AddressBook {
     private static final String COMMAND_DELETE_PARAMETER = "INDEX";
     private static final String COMMAND_DELETE_EXAMPLE = COMMAND_DELETE_WORD + " 1";
 
+    private static final String COMMAND_DELETEALL_WORD = "deleteall";
+    private static final String COMMAND_DELETEALL_DESC = "Deletes all people whose names contain any of the specified "
+            + "keywords (case-sensitive) and displays them as a list with index numbers.";
+
     private static final String COMMAND_CLEAR_WORD = "clear";
     private static final String COMMAND_CLEAR_DESC = "Clears address book permanently.";
     private static final String COMMAND_CLEAR_EXAMPLE = COMMAND_CLEAR_WORD;
@@ -363,6 +367,8 @@ public class AddressBook {
         case COMMAND_LIST_WORD:
             return executeListAllPersonsInAddressBook();
         case COMMAND_DELETE_WORD:
+            return executeDeletePerson(commandArgs);
+        case COMMAND_DELETEALL_WORD:
             return executeDeletePerson(commandArgs);
         case COMMAND_CLEAR_WORD:
             return executeClearAddressBook();
