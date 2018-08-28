@@ -1087,7 +1087,7 @@ public class AddressBook {
                 + String.format(MESSAGE_COMMAND_HELP_EXAMPLE, COMMAND_DELETE_EXAMPLE) + LS;
     }
 
-    /** Returns the string for showing 'delete' command usage instruction */
+    /** Returns the string for showing 'deleteall' command usage instruction */
     private static String getUsageInfoForDeleteAllCommand() {
         return String.format(MESSAGE_COMMAND_HELP, COMMAND_DELETEALL_WORD, COMMAND_DELETEALL_DESC) + LS
                 + String.format(MESSAGE_COMMAND_HELP_PARAMETERS, COMMAND_DELETEALL_PARAMETER) + LS
